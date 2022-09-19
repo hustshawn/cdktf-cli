@@ -1,11 +1,13 @@
 version: '3.3'
 services:
-  alpine:
-    build: 
-      dockerfile: ./scripts/Dockerfile
-      context: .
-    environment:
-      - CDKTF_VERSION
+  cdktf-cli:
+    # build: .
+    image: cdktf-cli:latest
+    command:
+      - tail
+      - -f
+      - /dev/null
     volumes:
       - .:/src
-    working_dir: /src
+      - ./data:/app
+    working_dir: /app

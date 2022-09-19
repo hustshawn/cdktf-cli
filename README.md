@@ -45,12 +45,7 @@ Build:
 make build
 ```
 
-Test:
+Run:
 ```
 make run
-```
-
-Push:
-```
-make push
 ```

@@ -19,8 +19,9 @@ build:
 		--tag "${IMAGE_NAME}:${CDKTF_VERSION}" \
 		--tag "${IMAGE_NAME}:latest" \
 		--tag "${REPO}/${IMAGE_NAME}:latest" \
-		--tag "${REPO}/${IMAGE_NAME}:${CDKTF_VERSION}" \
-		- < Dockerfile
+		--tag "${REPO}/${IMAGE_NAME}:${CDKTF_VERSION}" .
+		# --tag "${REPO}/${IMAGE_NAME}:${CDKTF_VERSION}" \
+		# -f Dockerfile
 
 push:
 	docker login --username ${REPO} --password ${DOCKER_HUB_TOKEN}
